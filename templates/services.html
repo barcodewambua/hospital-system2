@@ -6,9 +6,25 @@
 <div class="container py-5">
     <h1 class="text-center mb-5">Our Medical Services</h1>
 
-    <div class="row g-4">
+    <!-- Search and Filter Section -->
+    <div class="row mb-4">
+        <div class="col-md-6 mx-auto">
+            <div class="input-group">
+                <input type="text" class="form-control" id="serviceSearch" placeholder="Search services...">
+                <select class="form-select" id="categoryFilter" style="max-width: 200px;">
+                    <option value="all">All Categories</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="laboratory">Laboratory</option>
+                    <option value="special">Special Tests</option>
+                    <option value="additional">Additional Services</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4" id="servicesContainer">
         <!-- Consultation Services -->
-        <div class="col-md-6">
+        <div class="col-md-6 service-card" data-category="consultation">
             <div class="card h-100">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Consultation Services</h5>
@@ -26,7 +42,7 @@
         </div>
 
         <!-- Laboratory Tests -->
-        <div class="col-md-6">
+        <div class="col-md-6 service-card" data-category="laboratory">
             <div class="card h-100">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Laboratory Tests</h5>
@@ -44,7 +60,7 @@
         </div>
 
         <!-- Special Tests -->
-        <div class="col-md-6">
+        <div class="col-md-6 service-card" data-category="special">
             <div class="card h-100">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Special Tests</h5>
@@ -62,7 +78,7 @@
         </div>
 
         <!-- Additional Services -->
-        <div class="col-md-6">
+        <div class="col-md-6 service-card" data-category="additional">
             <div class="card h-100">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Additional Services</h5>
@@ -80,4 +96,31 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('serviceSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    function filterServices() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategory = categoryFilter.value;
+
+        serviceCards.forEach(card => {
+            const category = card.dataset.category;
+            const content = card.textContent.toLowerCase();
+            const matchesSearch = content.includes(searchTerm);
+            const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+
+            card.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterServices);
+    categoryFilter.addEventListener('change', filterServices);
+});
+</script>
 {% endblock %}
