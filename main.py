@@ -26,5 +26,13 @@ def health_assistant():
 def health_guide():
     return render_template('health_guide.html')
 
+@app.route('/family-health')
+def family_health():
+    return render_template('family_health.html')
+
+@app.route('/mental-health')
+def mental_health():
+    return render_template('mental_health.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
