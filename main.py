@@ -18,5 +18,13 @@ def services():
 def contact():
     return render_template('contact.html')
 
+@app.route('/health-assistant')
+def health_assistant():
+    return render_template('health_assistant.html')
+
+@app.route('/health-guide')
+def health_guide():
+    return render_template('health_guide.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
