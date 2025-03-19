@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Contact Us</h2>
+            <p class="lead">Get in touch with us for any inquiries or to schedule an appointment.</p>
+            
+            <form class="mt-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service" class="form-label">Service Required</label>
+                    <select class="form-select" id="service" required>
+                        <option value="">Select a service</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="laboratory">Laboratory Tests</option>
+                        <option value="pharmacy">Pharmacy Services</option>
+                        <option value="other">Other Services</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="contact-info mt-5">
+                <h3>Visit Us</h3>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">HealthCare Connect</h5>
+                        <p class="card-text">
+                            <i class="bi bi-geo-alt-fill text-primary"></i> 123 Medical Center Drive<br>
+                            <i class="bi bi-telephone-fill text-primary"></i> +1 (555) 123-4567<br>
+                            <i class="bi bi-envelope-fill text-primary"></i> info@healthcareconnect.com<br>
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Operating Hours</h3>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Monday - Friday: 8:00 AM - 8:00 PM</li>
+                            <li>Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 4:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
