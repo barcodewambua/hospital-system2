@@ -3,44 +3,46 @@
 {% block title %}Health Assistant{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <h1 class="text-center mb-5">Health Assistant</h1>
+<div class="health-assistant-page-bg">
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Health Assistant</h1>
 
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <div class="card">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">
-                        <i class="bi bi-robot"></i> Virtual Health Assistant
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <div class="alert alert-info">
-                        <i class="bi bi-info-circle"></i> This virtual assistant provides general health guidance only. It is not a substitute for professional medical advice, diagnosis, or treatment.
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-robot"></i> Virtual Health Assistant
+                        </h5>
                     </div>
-                    <div class="chat-container" id="chatContainer">
-                        <div class="chat-messages" id="chatMessages">
-                            <div class="message system">
-                                Welcome! I'm your health assistant. I can provide general health information and lifestyle advice. Remember: Always consult with a healthcare provider for proper diagnosis and treatment.
-                            </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> This virtual assistant provides general health guidance only. It is not a substitute for professional medical advice, diagnosis, or treatment.
                         </div>
-                        <div class="chat-input mt-3">
-                            <select class="form-select mb-2" id="questionType">
-                                <option value="">Select a topic...</option>
-                                <option value="lifestyle">Lifestyle Advice</option>
-                                <option value="diet">Diet Recommendations</option>
-                                <option value="exercise">Exercise Tips</option>
-                                <option value="checkup">When to Get a Checkup</option>
-                            </select>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="chatInput" placeholder="Type your health-related question...">
-                                <button class="btn btn-primary" id="sendMessage">
-                                    <i class="bi bi-send"></i> Send
-                                </button>
+                        <div class="chat-container" id="chatContainer">
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="message system">
+                                    Welcome! I'm your health assistant. I can provide general health information and lifestyle advice. Remember: Always consult with a healthcare provider for proper diagnosis and treatment.
+                                </div>
                             </div>
-                            <small class="text-muted mt-2 d-block">
-                                <i class="bi bi-exclamation-triangle"></i> Important: For medical emergencies or specific health concerns, please contact emergency services or visit a healthcare facility immediately.
-                            </small>
+                            <div class="chat-input mt-3">
+                                <select class="form-select mb-2" id="questionType">
+                                    <option value="">Select a topic...</option>
+                                    <option value="lifestyle">Lifestyle Advice</option>
+                                    <option value="diet">Diet Recommendations</option>
+                                    <option value="exercise">Exercise Tips</option>
+                                    <option value="checkup">When to Get a Checkup</option>
+                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="chatInput" placeholder="Type your health-related question...">
+                                    <button class="btn btn-primary" id="sendMessage">
+                                        <i class="bi bi-send"></i> Send
+                                    </button>
+                                </div>
+                                <small class="text-muted mt-2 d-block">
+                                    <i class="bi bi-exclamation-triangle"></i> Important: For medical emergencies or specific health concerns, please contact emergency services or visit a healthcare facility immediately.
+                                </small>
+                            </div>
                         </div>
                     </div>
                 </div>

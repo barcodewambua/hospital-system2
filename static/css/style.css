@@ -192,3 +192,51 @@ footer a:hover {
         max-width: 90%;
     }
 }
+
+/* Page Background Styles */
+.services-page-bg,
+.health-assistant-page-bg,
+.health-guide-page-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.services-page-bg::before,
+.health-assistant-page-bg::before,
+.health-guide-page-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 0;
+}
+
+.services-page-bg {
+    background-image: url('https://images.unsplash.com/photo-1504439468489-c8920d796a29');
+}
+
+.health-assistant-page-bg {
+    background-image: url('https://images.unsplash.com/photo-1581595219106-3cdb11f29486');
+}
+
+.health-guide-page-bg {
+    background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+}
+
+.services-page-bg .container,
+.health-assistant-page-bg .container,
+.health-guide-page-bg .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Enhance card visibility */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

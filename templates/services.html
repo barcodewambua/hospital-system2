@@ -3,157 +3,159 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <h1 class="text-center mb-5">Our Medical Services</h1>
+<div class="services-page-bg">
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Our Medical Services</h1>
 
-    <!-- Intro text -->
-    <div class="row mb-4">
-        <div class="col-lg-8 mx-auto text-center">
-            <p class="lead">We offer a wide range of medical services to help you stay healthy. Use our search tool to find the service you need, or explore our categories below.</p>
-        </div>
-    </div>
-
-    <!-- Search and Filter Section -->
-    <div class="row mb-4">
-        <div class="col-md-6 mx-auto">
-            <div class="input-group">
-                <input type="text" class="form-control" id="serviceSearch" placeholder="Search services...">
-                <select class="form-select" id="categoryFilter" style="max-width: 200px;">
-                    <option value="all">All Categories</option>
-                    <option value="consultation">Consultation</option>
-                    <option value="laboratory">Laboratory</option>
-                    <option value="special">Special Tests</option>
-                    <option value="additional">Additional Services</option>
-                </select>
+        <!-- Intro text -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="lead">We offer a wide range of medical services to help you stay healthy. Use our search tool to find the service you need, or explore our categories below.</p>
             </div>
         </div>
-    </div>
 
-    <div class="row g-4" id="servicesContainer">
-        <!-- Consultation Services -->
-        <div class="col-md-6 service-card" data-category="consultation">
-            <div class="card h-100">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">General Medical Services</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <p class="text-muted">Our experienced doctors provide comprehensive medical care for your health needs.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h6>General Consultation</h6>
-                            <small class="text-muted">A thorough check-up with our doctors to discuss your health concerns</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Prescription & Health Assessment</h6>
-                            <small class="text-muted">Professional evaluation of your health and necessary medication guidance</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Family Planning Services</h6>
-                            <small class="text-muted">Confidential counseling and guidance for family planning options</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Wound Care</h6>
-                            <small class="text-muted">Professional treatment for wounds, cuts, and minor surgical procedures</small>
-                        </li>
-                    </ul>
+        <!-- Search and Filter Section -->
+        <div class="row mb-4">
+            <div class="col-md-6 mx-auto">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="serviceSearch" placeholder="Search services...">
+                    <select class="form-select" id="categoryFilter" style="max-width: 200px;">
+                        <option value="all">All Categories</option>
+                        <option value="consultation">Consultation</option>
+                        <option value="laboratory">Laboratory</option>
+                        <option value="special">Special Tests</option>
+                        <option value="additional">Additional Services</option>
+                    </select>
                 </div>
             </div>
         </div>
 
-        <!-- Laboratory Tests -->
-        <div class="col-md-6 service-card" data-category="laboratory">
-            <div class="card h-100">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Blood & Laboratory Tests</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <p class="text-muted">Comprehensive testing services to help monitor your health status.</p>
+        <div class="row g-4" id="servicesContainer">
+            <!-- Consultation Services -->
+            <div class="col-md-6 service-card" data-category="consultation">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">General Medical Services</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h6>Complete Blood Count</h6>
-                            <small class="text-muted">Checks your overall health by measuring different parts of your blood</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Blood Sugar Testing</h6>
-                            <small class="text-muted">Monitors glucose levels for diabetes management and prevention</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Liver Health Check</h6>
-                            <small class="text-muted">Evaluates your liver function and overall health</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Infection Testing</h6>
-                            <small class="text-muted">Identifies various types of infections through laboratory analysis</small>
-                        </li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <p class="text-muted">Our experienced doctors provide comprehensive medical care for your health needs.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6>General Consultation</h6>
+                                <small class="text-muted">A thorough check-up with our doctors to discuss your health concerns</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Prescription & Health Assessment</h6>
+                                <small class="text-muted">Professional evaluation of your health and necessary medication guidance</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Family Planning Services</h6>
+                                <small class="text-muted">Confidential counseling and guidance for family planning options</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Wound Care</h6>
+                                <small class="text-muted">Professional treatment for wounds, cuts, and minor surgical procedures</small>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Special Tests -->
-        <div class="col-md-6 service-card" data-category="special">
-            <div class="card h-100">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Specialized Health Screenings</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <p class="text-muted">Advanced tests for specific health conditions and comprehensive screening.</p>
+            <!-- Laboratory Tests -->
+            <div class="col-md-6 service-card" data-category="laboratory">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Blood & Laboratory Tests</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h6>Joint Health Assessment</h6>
-                            <small class="text-muted">Checks for arthritis and other joint-related conditions</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Kidney Function Check</h6>
-                            <small class="text-muted">Evaluates how well your kidneys are working</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Inflammation Tests</h6>
-                            <small class="text-muted">Measures levels of inflammation in your body</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Bone Health Screening</h6>
-                            <small class="text-muted">Checks calcium levels and bone health indicators</small>
-                        </li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <p class="text-muted">Comprehensive testing services to help monitor your health status.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6>Complete Blood Count</h6>
+                                <small class="text-muted">Checks your overall health by measuring different parts of your blood</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Blood Sugar Testing</h6>
+                                <small class="text-muted">Monitors glucose levels for diabetes management and prevention</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Liver Health Check</h6>
+                                <small class="text-muted">Evaluates your liver function and overall health</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Infection Testing</h6>
+                                <small class="text-muted">Identifies various types of infections through laboratory analysis</small>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Additional Services -->
-        <div class="col-md-6 service-card" data-category="additional">
-            <div class="card h-100">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Preventive Care Services</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <p class="text-muted">Additional healthcare services to support your overall wellbeing.</p>
+            <!-- Special Tests -->
+            <div class="col-md-6 service-card" data-category="special">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Specialized Health Screenings</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h6>Breathing Treatments</h6>
-                            <small class="text-muted">Helps improve breathing for respiratory conditions</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Health Counseling</h6>
-                            <small class="text-muted">Professional guidance for your health concerns</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Medication Services</h6>
-                            <small class="text-muted">Access to prescribed medications and professional guidance</small>
-                        </li>
-                        <li class="list-group-item">
-                            <h6>Preventive Screening</h6>
-                            <small class="text-muted">Regular health checks to prevent potential issues</small>
-                        </li>
-                    </ul>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <p class="text-muted">Advanced tests for specific health conditions and comprehensive screening.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6>Joint Health Assessment</h6>
+                                <small class="text-muted">Checks for arthritis and other joint-related conditions</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Kidney Function Check</h6>
+                                <small class="text-muted">Evaluates how well your kidneys are working</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Inflammation Tests</h6>
+                                <small class="text-muted">Measures levels of inflammation in your body</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Bone Health Screening</h6>
+                                <small class="text-muted">Checks calcium levels and bone health indicators</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="col-md-6 service-card" data-category="additional">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Preventive Care Services</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <p class="text-muted">Additional healthcare services to support your overall wellbeing.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6>Breathing Treatments</h6>
+                                <small class="text-muted">Helps improve breathing for respiratory conditions</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Health Counseling</h6>
+                                <small class="text-muted">Professional guidance for your health concerns</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Medication Services</h6>
+                                <small class="text-muted">Access to prescribed medications and professional guidance</small>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Preventive Screening</h6>
+                                <small class="text-muted">Regular health checks to prevent potential issues</small>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
