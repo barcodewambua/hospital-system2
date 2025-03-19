@@ -1,7 +1,7 @@
 [project]
-name = "repl-nix-workspace"
-version = "0.1.0"
-description = "Add your description here"
+name = "healthcare-connect"
+version = "1.0.0"
+description = "A comprehensive medical services website providing informative and interactive healthcare resources"
 requires-python = ">=3.11"
 dependencies = [
     "email-validator>=2.2.0",
@@ -11,3 +11,19 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "trafilatura>=2.0.0",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"
