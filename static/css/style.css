@@ -15,6 +15,7 @@ body {
 /* Navbar Styles */
 .navbar {
     padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-brand {
@@ -22,10 +23,22 @@ body {
     font-weight: bold;
 }
 
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;
     overflow: hidden;
+    height: 600px;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-section::after {
@@ -42,155 +55,63 @@ body {
     z-index: 1;
 }
 
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+}
+
 /* Card Styles */
 .card {
     transition: transform 0.3s ease;
     border: none;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Services Section */
-.services-overview .card {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.why-choose-us i {
-    color: var(--primary-color);
-}
-
-/* Service Cards */
 .service-card {
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-.service-card .card-header {
-    padding: 1rem;
+.service-card .card-body {
+    padding: 2rem;
 }
 
-.service-card .list-group-item {
-    padding: 1rem;
-    border-left: none;
-    border-right: none;
+.service-card i {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
 }
 
-.service-card .list-group-item:last-child {
-    border-bottom: none;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.service-card small {
-    display: block;
-    margin-top: 0.25rem;
+.service-card .list-unstyled li {
+    padding: 0.5rem 0;
 }
 
-/* Search and Filter */
-.input-group {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+/* Why Choose Us Section */
+.why-choose-us {
+    background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 5rem 0;
 }
 
-#serviceSearch, #categoryFilter {
-    border: none;
-    padding: 12px 20px;
-}
-
-#serviceSearch:focus, #categoryFilter:focus {
-    box-shadow: none;
-    border-color: var(--primary-color);
-}
-
-#categoryFilter {
-    border-left: 1px solid #dee2e6;
-}
-
-/* Chatbot Styles */
-.chat-container {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.chat-messages {
-    height: 300px;
-    overflow-y: auto;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-}
-
-.message {
+.why-choose-us i {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    max-width: 80%;
-}
-
-.message.system {
-    background: #e3f2fd;
-    margin-left: 0;
-    color: #0d47a1;
-}
-
-.message.user {
-    background: #e8f5e9;
-    margin-left: auto;
-    color: #1b5e20;
-}
-
-.chat-input {
-    margin-top: 1rem;
-}
-
-/* Contact Form */
-.form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-/* Footer */
-footer {
-    background-color: #343a40;
-}
-
-footer a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--primary-color) !important;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-section img {
-        height: 400px !important;
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    .service-card {
-        margin-bottom: 1rem;
-    }
-
-    .chat-messages {
-        height: 250px;
-    }
-
-    .message {
-        max-width: 90%;
-    }
+    color: var(--primary-color);
 }
 
 /* Page Background Styles */
@@ -217,26 +138,171 @@ footer a:hover {
 }
 
 .services-page-bg {
-    background-image: url('https://images.unsplash.com/photo-1504439468489-c8920d796a29');
-}
-
-.health-assistant-page-bg {
     background-image: url('https://images.unsplash.com/photo-1581595219106-3cdb11f29486');
 }
 
-.health-guide-page-bg {
-    background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+.health-assistant-page-bg {
+    background-image: url('https://images.unsplash.com/photo-1584515933487-779824d29309');
 }
 
-.services-page-bg .container,
-.health-assistant-page-bg .container,
-.health-guide-page-bg .container {
-    position: relative;
-    z-index: 1;
+.health-guide-page-bg {
+    background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118');
 }
+
+/* Service Cards */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card .card-header {
+    padding: 1rem;
+}
+
+.service-card .list-group-item {
+    padding: 1rem;
+    border-left: none;
+    border-right: none;
+}
+
+/* Chatbot Styles */
+.chat-container {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    max-width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.message.system {
+    background: #e3f2fd;
+    margin-left: 0;
+    color: #0d47a1;
+}
+
+.message.user {
+    background: #e8f5e9;
+    margin-left: auto;
+    color: #1b5e20;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(45deg, #343a40 0%, #212529 100%);
+    padding: 4rem 0 2rem;
+}
+
+footer .bi {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .chat-messages {
+        height: 300px;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Search and Filter */
+.input-group {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#serviceSearch, #categoryFilter {
+    border: none;
+    padding: 12px 20px;
+}
+
+#serviceSearch:focus, #categoryFilter:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+#categoryFilter {
+    border-left: 1px solid #dee2e6;
+}
+
+/* Contact Form */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
 
 /* Enhance card visibility */
 .card {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.services-overview .card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.why-choose-us i {
+    color: var(--primary-color);
+}
+
+.service-card .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.service-card small {
+    display: block;
+    margin-top: 0.25rem;
 }
