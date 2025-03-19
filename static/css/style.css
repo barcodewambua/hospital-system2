@@ -306,3 +306,40 @@ footer .bi {
     display: block;
     margin-top: 0.25rem;
 }
+
+/* Add to existing CSS file */
+
+/* Topic Button Styles */
+.topic-btn {
+    text-align: center;
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.topic-btn i {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.topic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.topic-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Mental Health Link Highlight */
+.nav-item .nav-link[href="/mental-health"] {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.nav-item .nav-link[href="/mental-health"]:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}

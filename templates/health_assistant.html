@@ -26,13 +26,45 @@
                                 </div>
                             </div>
                             <div class="chat-input mt-3">
-                                <select class="form-select mb-2" id="questionType">
-                                    <option value="">Select a topic...</option>
-                                    <option value="lifestyle">Lifestyle Advice</option>
-                                    <option value="diet">Diet Recommendations</option>
-                                    <option value="exercise">Exercise Tips</option>
-                                    <option value="checkup">When to Get a Checkup</option>
-                                </select>
+                                <!-- Topic Buttons Grid -->
+                                <div class="row g-2 mb-3">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-outline-primary w-100 h-100 py-3 topic-btn" data-topic="lifestyle">
+                                            <i class="bi bi-heart-pulse mb-2"></i>
+                                            <br>Lifestyle Advice
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-outline-primary w-100 h-100 py-3 topic-btn" data-topic="diet">
+                                            <i class="bi bi-apple mb-2"></i>
+                                            <br>Diet Recommendations
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-outline-primary w-100 h-100 py-3 topic-btn" data-topic="exercise">
+                                            <i class="bi bi-activity mb-2"></i>
+                                            <br>Exercise Tips
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-outline-primary w-100 h-100 py-3 topic-btn" data-topic="checkup">
+                                            <i class="bi bi-calendar-check mb-2"></i>
+                                            <br>When to Get a Checkup
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-outline-primary w-100 h-100 py-3 topic-btn" data-topic="mental">
+                                            <i class="bi bi-brain mb-2"></i>
+                                            <br>Mental Health Support
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="/mental-health" class="btn btn-success w-100 h-100 py-3">
+                                            <i class="bi bi-chat-dots mb-2"></i>
+                                            <br>Professional Mental Health Support
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="chatInput" placeholder="Type your health-related question...">
                                     <button class="btn btn-primary" id="sendMessage">
@@ -58,7 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatMessages = document.getElementById('chatMessages');
     const chatInput = document.getElementById('chatInput');
     const sendButton = document.getElementById('sendMessage');
-    const questionType = document.getElementById('questionType');
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    let selectedTopic = '';
 
     const responses = {
         lifestyle: {
@@ -96,6 +129,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     "• If you have chronic conditions\n" +
                     "• For preventive screenings based on age and risk factors\n\n" +
                     "Never rely on self-diagnosis - always consult healthcare professionals.",
+        },
+        mental: {
+            default: "Mental health is just as important as physical health:\n" +
+                    "• Practice mindfulness and meditation\n" +
+                    "• Maintain a regular sleep schedule\n" +
+                    "• Stay connected with supportive people\n" +
+                    "• Set realistic goals and boundaries\n" +
+                    "• Consider professional counseling\n\n" +
+                    "Visit our Mental Health page for professional support and counseling services.",
         }
     };
 
@@ -109,18 +151,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleMessage() {
         const message = chatInput.value.trim();
-        const type = questionType.value;
-
-        if (!message || !type) return;
+        if (!message || !selectedTopic) {
+            addMessage("Please select a topic first by clicking one of the buttons above.");
+            return;
+        }
 
         addMessage(message, true);
         chatInput.value = '';
 
         setTimeout(() => {
-            const response = responses[type]?.default || "Please select a topic and ask a health-related question.";
+            const response = responses[selectedTopic]?.default || "Please select a topic and ask a health-related question.";
             addMessage(response);
         }, 500);
     }
+
+    topicButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            topicButtons.forEach(btn => btn.classList.remove('active', 'btn-primary'));
+            // Add active class to clicked button
+            this.classList.add('active', 'btn-primary');
+            selectedTopic = this.dataset.topic;
+            addMessage(`Selected topic: ${this.textContent.trim()}. How can I help you?`);
+        });
+    });
 
     sendButton.addEventListener('click', handleMessage);
     chatInput.addEventListener('keypress', (e) => {
