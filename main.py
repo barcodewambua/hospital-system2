@@ -1,10 +1,3 @@
-"""
-HealthCare Connect - Main Application
-
-A comprehensive medical services website providing informative and
-interactive healthcare resources.
-"""
-
 import os
 import logging
 from flask import Flask, render_template
@@ -16,9 +9,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Initialize Flask application
+# Initialize Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET")
+app.secret_key = os.environ.get("SESSION_SECRET", "mysecret")
 
 # Route definitions
 @app.route('/')
@@ -64,6 +57,9 @@ def mental_health():
     return render_template('mental_health.html')
 
 if __name__ == '__main__':
-    # ALWAYS serve the app on port 5000
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    # Use Waitress on Windows, Gunicorn on Linux
+    if os.name == 'nt':  # Windows
+        from waitress import serve
+        serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    else:  # Linux (like Vercel or Cloud servers)
+        app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
